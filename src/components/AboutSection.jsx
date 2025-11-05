@@ -13,7 +13,7 @@ const underlineVariants = {
 
 export default function AboutSection() {
   return (
-    <section className="relative z-10 mx-auto max-w-6xl px-6 py-20">
+    <section id="about" className="relative z-10 mx-auto max-w-6xl px-6 py-20">
       <GlowCard className="shadow-[0_0_50px_rgba(108,0,255,0.25),0_0_80px_rgba(0,194,255,0.15)]">
         <div className="grid grid-cols-1 items-center gap-10 p-6 md:grid-cols-2 md:p-10">
           {/* Photo */}
