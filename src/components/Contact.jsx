@@ -34,13 +34,13 @@ const Contact = () => {
             <span className="text-sm text-white/80">github.com/LahJaki</span>
           </a>
           <a
-            href="https://t.me/LahJaki"
+            href="https://t.me/LahKokJaki"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10"
           >
             <Send className="h-5 w-5 text-cyan-400" />
-            <span className="text-sm text-white/80">@LahJaki</span>
+            <span className="text-sm text-white/80">@LahKokJaki</span>
           </a>
           <a
             href="https://instagram.com/LahJaki"
