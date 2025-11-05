@@ -27,19 +27,19 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-4xl font-semibold leading-tight text-[#CFCFFF] md:text-6xl"
+          className="text-5xl font-extrabold tracking-tight text-white md:text-7xl"
           style={{ textShadow: '0 0 16px rgba(108,0,255,0.45), 0 0 30px rgba(0,194,255,0.35)' }}
         >
-          Crafting Intelligent Systems
+          Dzaky Ardiansyah
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: 'easeOut', delay: 0.1 }}
-          className="mt-4 max-w-2xl text-balance text-[15px] text-[#CFCFFF]/85 md:text-base"
+          className="mt-4 max-w-2xl text-balance text-[15px] text-[#CFCFFF]/90 md:text-lg"
           style={{ textShadow: '0 0 8px rgba(108,0,255,0.25), 0 0 16px rgba(0,194,255,0.2)' }}
         >
-          Hardware + Software • Futuristic • Efficient • Connected
+          Building the bridge between hardware and software
         </motion.p>
       </div>
     </section>
