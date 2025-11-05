@@ -11,26 +11,6 @@ const underlineVariants = {
   },
 };
 
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const textItem = {
-  hidden: { opacity: 0, y: 12, filter: 'blur(6px)' },
-  show: {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.6, ease: 'easeOut' },
-  },
-};
-
 export default function AboutSection() {
   return (
     <section id="about" className="relative z-10 mx-auto max-w-6xl px-6 py-20">
@@ -78,7 +58,7 @@ export default function AboutSection() {
             </motion.div>
           </motion.div>
 
-          {/* Text and animated bio */}
+          {/* Text and bio (no animations) */}
           <motion.div
             initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +74,7 @@ export default function AboutSection() {
             >
               About Me
             </h2>
-            {/* Animated glow underline */}
+            {/* Animated glow underline (kept) */}
             <motion.div
               variants={underlineVariants}
               initial="initial"
@@ -108,7 +88,7 @@ export default function AboutSection() {
               }}
             />
 
-            {/* Icon divider */}
+            {/* Icon divider (kept) */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -135,38 +115,21 @@ export default function AboutSection() {
               />
             </motion.div>
 
-            {/* Animated bio with staggered lines and shimmer */}
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.35 }}
+            {/* Static bio text (no line animations or shimmer) */}
+            <div
               className="relative mt-5 space-y-3 text-[15px] leading-relaxed text-[#CFCFFF] md:text-[16px]"
-              style={{ textShadow: '0 0 10px rgba(108,0,255,0.35), 0 0 18px rgba(0,194,255,0.3)' }}
+              style={{ textShadow: '0 0 10px rgba(108,0,255,0.2), 0 0 18px rgba(0,194,255,0.15)' }}
             >
-              {/* Sweeping highlight overlay */}
-              <motion.div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-md"
-                style={{
-                  background:
-                    'linear-gradient(100deg, rgba(108,0,255,0.0) 20%, rgba(108,0,255,0.12) 40%, rgba(0,194,255,0.12) 60%, rgba(0,194,255,0.0) 80%)',
-                  backgroundSize: '200% 100%',
-                }}
-                animate={{ backgroundPositionX: ['0%', '200%'] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-              />
-
-              <motion.p variants={textItem}>
+              <p>
                 I’m a passionate Hardware & Software Engineer who loves building smart and efficient systems.
-              </motion.p>
-              <motion.p variants={textItem}>
+              </p>
+              <p>
                 I design, assemble, and optimize both hardware and software to create seamless, connected technology experiences — from microcontrollers and embedded devices to web-based control systems.
-              </motion.p>
-              <motion.p variants={textItem}>
+              </p>
+              <p>
                 Recently, I’ve been exploring creative HCI patterns, real‑time device telemetry, and resilient edge deployments.
-              </motion.p>
-            </motion.div>
+              </p>
+            </div>
           </motion.div>
         </div>
       </GlowCard>
