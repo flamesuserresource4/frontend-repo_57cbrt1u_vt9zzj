@@ -26,7 +26,7 @@ export default function AboutSection() {
           >
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
               <img
-                src="https://ibb.co.com/bg1bwFXd"
+                src="https://freeimage.host/i/KZYJysp"
                 alt="Portrait"
                 className="h-full w-full object-cover"
                 style={{ filter: 'saturate(1.05) contrast(1.05)' }}
