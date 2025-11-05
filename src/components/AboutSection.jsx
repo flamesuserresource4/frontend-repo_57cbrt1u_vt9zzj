@@ -1,7 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import GlowCard from './GlowCard';
 import { Sparkles } from 'lucide-react';
+import TypingText from './TypingText';
 
 const underlineVariants = {
   initial: { backgroundPositionX: '0%' },
@@ -12,6 +13,9 @@ const underlineVariants = {
 };
 
 export default function AboutSection() {
+  const textRef = useRef(null);
+  const inView = useInView(textRef, { once: true, margin: '0px 0px -20% 0px' });
+
   return (
     <section id="about" className="relative z-10 mx-auto max-w-6xl px-6 py-20">
       <GlowCard className="shadow-[0_0_50px_rgba(108,0,255,0.25),0_0_80px_rgba(0,194,255,0.15)]">
@@ -58,7 +62,7 @@ export default function AboutSection() {
             </motion.div>
           </motion.div>
 
-          {/* Text and bio (no animations) */}
+          {/* Text and bio with scroll-triggered slide + typing */}
           <motion.div
             initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -115,20 +119,22 @@ export default function AboutSection() {
               />
             </motion.div>
 
-            {/* Static bio text (no line animations or shimmer) */}
+            {/* Typing bio */}
             <div
+              ref={textRef}
               className="relative mt-5 space-y-3 text-[15px] leading-relaxed text-[#CFCFFF] md:text-[16px]"
               style={{ textShadow: '0 0 10px rgba(108,0,255,0.2), 0 0 18px rgba(0,194,255,0.15)' }}
             >
-              <p>
-                I’m a passionate Hardware & Software Engineer who loves building smart and efficient systems.
-              </p>
-              <p>
-                I design, assemble, and optimize both hardware and software to create seamless, connected technology experiences — from microcontrollers and embedded devices to web-based control systems.
-              </p>
-              <p>
-                Recently, I’ve been exploring creative HCI patterns, real‑time device telemetry, and resilient edge deployments.
-              </p>
+              <TypingText
+                start={inView}
+                charSpeed={16}
+                paragraphDelay={420}
+                paragraphs={[
+                  'I’m a passionate Hardware & Software Engineer who loves building smart and efficient systems.',
+                  'I design, assemble, and optimize both hardware and software to create seamless, connected technology experiences — from microcontrollers and embedded devices to web-based control systems.',
+                  'Recently, I’ve been exploring creative HCI patterns, real‑time device telemetry, and resilient edge deployments.'
+                ]}
+              />
             </div>
           </motion.div>
         </div>
