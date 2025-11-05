@@ -20,7 +20,7 @@ export default function App() {
       <Contact />
 
       <footer className="py-10 text-center text-sm text-white/60">
-        © {new Date().getFullYear()} All rights reserved.
+        © 2025 ZakiUhui
       </footer>
     </div>
   );
